@@ -3,7 +3,6 @@
 // Change these to suit your case!
 // IMPORTANT: don't have '/' at the end of either domain or startPage
 const config = {
-  domain: 'knowledge.basix.tech',
   startPage: '/#/app/Basix/page/83vDxwXZk',
 };
 
@@ -35,7 +34,7 @@ class HeadRewriter {
   element(element: Element) {
     element.prepend(
       `<script>
-        if (window.location.hash === "" && window.location.host === "${config.domain}") {
+        if (window.location.hash === "") {
           history.pushState(history.state, "", "${config.startPage}");
         }
       </script>`,
